@@ -1,5 +1,5 @@
 <?php require'header.php'; ?>
-<.
+
 
 <?php
 if (isset($_GET['del'])) {
@@ -36,11 +36,9 @@ if (isset($_GET['del'])) {
 				$ids = array_keys($_SESSION['panier']);
 				if(empty($ids))
 				{
-					$produits = array();
 				}
 				else
 				{
-
 					$produits=$DB->query('SELECT * FROM produits WHERE id IN('.implode(',',$ids).')');
 				}
 

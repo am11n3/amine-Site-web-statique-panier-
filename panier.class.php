@@ -53,6 +53,7 @@ class panier
 		else
 		$_SESSION['panier'][$produit_id] = 1;
 	}
+		
 	public function del($produit_id)
 	{
 		unset($_SESSION['panier'][$produit_id]);

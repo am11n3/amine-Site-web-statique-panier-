@@ -2,13 +2,13 @@
 	
 	class DB
 	{
-		private $host		= 'localhost';
-		private $username 	= 'id12809098_amineren';
-		private $password 	= 'amine_smi6';
-		private $database 	= 'id12809098_datanime';
+		private $host		= 'localhost';					//'localhost';
+		private $username 	= 'root'; 						//'id12809098_amineren';
+		private $password 	= '';							//'amine_smi6';
+		private $database 	= 'panier';						//'id12809098_datanime';		
 		private $db;	
 
-
+		//connection a la table produits
 		public function __construct($host=null,$username=null,$password=null,$database=null)
 		{
 			if($host!=null)
@@ -27,7 +27,7 @@
 			{
 				die('<h1>Impossible de se connecter a la base de donnee</h1>');
 			}
-		}	
+		}
 
 		public function query($sql,$data=array())
 		{
@@ -37,4 +37,19 @@
 		}
 	}
 
+	//connection a la table client
+	    $servername = "localhost";
+		$username = "root";
+		$password = "";
+		$database 	= 'panier';
+
+		try {
+		    $con = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+		    // set the PDO error mode to exception
+		    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		    }
+		catch(PDOException $e)
+		    {
+		    echo "Connection failed: " . $e->getMessage();
+		    }
 ?>

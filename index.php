@@ -1,6 +1,8 @@
-<?php require'header.php' ?>
+<?php require'header.php' ;
+ob_start();
+?>
 	<!-- slider s -->
-	<div class="slider"> 
+	<div class="slider"> 	
     <div>
      <div id="main-slider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -79,7 +81,15 @@
         <p class="prix">$<?= $produit->prix;?></p>
         <p>Figurine One Piece Luffy <br>The King ...</p>
         <!-- <button type="button" class="btn btn-primary">acheter</button> -->
-        <button type="button" class="btn btn-primary"><a href="addpanier.php?id=<?= $produit->id; ?>"> ajouter a la carte</a></button>
+        
+        	 <button type="button" class="btn btn-primary">
+        	 	<?php if(isset($_SESSION['user_id'])){ ?>
+        	 		<a href="addpanier.php?id=<?= $produit->id; ?>"> ajouter a la carte</a> 
+        	 	<?php }else{ ?>
+        	 		<a href="login.php"> ajouter a la carte</a>
+        		<?php } ?>
+    		</button>
+       
       </div>
       <?php endforeach ?>
 
@@ -162,7 +172,7 @@
   <div class="carousel-inner">
     <div class="carousel-item ">
    <div class="carousel-caption d-none d-md-block">
-    <img src="img/71560.jpg"class="rounded-circle" alt="img-thumbnail">
+    <img src="img/9.jpg"class="rounded-circle" alt="img-thumbnail">
     <h3>Bahafid Abdessalam</h3>
     <span>otaku</span>
     <p>Très bon produit, j'ai reçu ma commande comme prévu et la qualité est vraiment au rendez vous !</p>
@@ -178,7 +188,7 @@
     </div>
     <div class="carousel-item active">
   <div class="carousel-caption d-none d-md-block ">
-    <img src="img/161887.png " class="rounded-circle" alt="">
+    <img src="img/10.png " class="rounded-circle" alt="">
     <h3>Salma Neko</h3>
     <span>Otaku Gamer</span>
     <p>Livré plus vite que prévu !très bon produit.</p>

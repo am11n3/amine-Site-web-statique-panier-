@@ -21,20 +21,34 @@
 					<i class="fa fa-phone"> +212662624578 ,</i>
 					<i class="fa fa-envelope"></i>  jeager_eren@gmail.com
 				</div>
-				<div class="col-sm">
+				
+        <div class="col-sm">
 					Let's Read Manga,
           <i class="fa fa-search"></i> Search
 				</div>
+        
+        
+         <?php if (!isset($_SESSION['user_id'])){?>
         <div class="col-sm">
-          <a href="login.html" target="">Se connecter</a>
-          </div>
-          <div class="col-sm">
-           <a href="registre.html" target="">S'inscrire</a>
+          <a href="login.php">Se connecter</a>
         </div>
+        <div class="col-sm">
+           <a href="registre.php">S'inscrire</a>
+        </div>
+      <?php }else{?>
+          <div class="col-sm">
+           <a href="profile.php">Mon compte</a>
+        </div>
+        <div class="col-sm">
+           <a href="logout.php">Déconnecter</a>
+        </div>
+      <?php } ?>
+        
         <div >
           <a href="panier.php">
           <i class="fa fa-shopping-basket"></i>Panier</a>
         </div>
+
 			</div>
 		</div>
 	</div>
