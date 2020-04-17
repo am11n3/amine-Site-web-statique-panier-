@@ -2,10 +2,10 @@
 	
 	class DB
 	{
-		private $host		= 'localhost';					//'localhost';
-		private $username 	= 'root'; 						//'id12809098_amineren';
-		private $password 	= '';							//'amine_smi6';
-		private $database 	= 'panier';						//'id12809098_datanime';		
+		private $host		= 'localhost';					                //'localhost';
+		private $username 	= 'id12809098_amineren'; 						//'id12809098_amineren';
+		private $password 	= 'amine_smi6';					        		//'amine_smi6';
+		private $database 	= 'id12809098_datanime';						//'id12809098_datanime';		
 		private $db;	
 
 		//connection a la table produits
@@ -39,9 +39,9 @@
 
 	//connection a la table client
 	    $servername = "localhost";
-		$username = "root";
-		$password = "";
-		$database 	= 'panier';
+		$username = "id12809098_amineren";
+		$password = "amine_smi6";
+		$database 	= 'id12809098_datanime';
 
 		try {
 		    $con = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
@@ -52,4 +52,7 @@
 		    {
 		    echo "Connection failed: " . $e->getMessage();
 		    }
+
+
+
 ?>
