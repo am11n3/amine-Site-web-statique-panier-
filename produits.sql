@@ -1,6 +1,18 @@
 --
 -- Table structure for table `produits`
 --
+CREATE TABLE `clients` (
+  `id` int(8) NOT NULL,
+  `nom_prenom` varchar(22) NOT NULL,
+  `email` double(10,2) NOT NULL,
+  `telephone` `nom_prenom` varchar(22) NOT NULL,
+  `password` `nom_prenom` varchar(22) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+--
+-- Table structure for table `produits`
+--
 
 CREATE TABLE `produits` (
   `id` int(8) NOT NULL,
@@ -22,7 +34,14 @@ INSERT INTO `produits` (`id`, `name`,`prix`) VALUES
 (7,'WHITE BEARD',44.88),
 (8,'TOMORA',22.38);
 
-
+-- Indexes for table `clients`
+--
+ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`);
+  
+ ALTER TABLE `clients`
+  ADD UNIQUE(`email`);
+  
 -- Indexes for table `produits`
 --
 ALTER TABLE `produits`
